@@ -1,8 +1,10 @@
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ShoppingCart } from "lucide-react";
+import { useCart } from "@/contexts/CartContext";
 
 interface ProductCardProps {
+  id: string;
   name: string;
   category: string;
   description: string;
@@ -11,7 +13,12 @@ interface ProductCardProps {
   image: string;
 }
 
-const ProductCard = ({ name, category, description, price, weight, image }: ProductCardProps) => {
+const ProductCard = ({ id, name, category, description, price, weight, image }: ProductCardProps) => {
+  const { addToCart } = useCart();
+
+  const handleAddToCart = () => {
+    addToCart({ id, name, category, description, price, weight, image });
+  };
   return (
     <Card className="card-hover overflow-hidden border-border shadow-[var(--shadow-card)]">
       <div className="aspect-square overflow-hidden bg-gradient-to-br from-background to-muted">
@@ -33,7 +40,7 @@ const ProductCard = ({ name, category, description, price, weight, image }: Prod
         </div>
       </CardContent>
       <CardFooter className="p-6 pt-0">
-        <Button className="w-full btn-hero">
+        <Button className="w-full btn-hero" onClick={handleAddToCart}>
           <ShoppingCart className="mr-2 h-4 w-4" />
           Add to Cart
         </Button>
