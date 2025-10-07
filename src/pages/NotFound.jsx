@@ -65,7 +65,7 @@ const NotFound = () => {
               <Button
                 variant="ghost"
                 size="sm"
-                onClick={() => navigate("/products")}
+                onClick={() => navigate("/product-page")}
                 className="text-blue-600 hover:text-blue-700"
               >
                 Browse Products

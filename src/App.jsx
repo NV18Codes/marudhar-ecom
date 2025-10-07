@@ -59,7 +59,7 @@ const App = () => {
             <BrowserRouter>
               <Routes>
                 <Route path="/" element={<Index />} />
-                <Route path="/products" element={<Products />} />
+                <Route path="/product-page" element={<Products />} />
                 <Route path="/signin" element={<SignIn />} />
                 <Route path="/signup" element={<SignUp />} />
                 <Route path="/cart" element={<Cart />} />
