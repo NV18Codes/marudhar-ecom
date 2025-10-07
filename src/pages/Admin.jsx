@@ -263,14 +263,14 @@ const Admin = () => {
         </div>
 
         {/* Enhanced Stats Cards */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-6 sm:mb-8">
           <Card className="border-l-4 border-l-primary hover:shadow-lg transition-shadow animate-slide-up">
-            <CardHeader className="flex flex-row items-center justify-between pb-2">
-              <CardTitle className="text-sm font-medium text-muted-foreground">Total Revenue</CardTitle>
-              <DollarSign className="h-5 w-5 text-primary" />
+            <CardHeader className="flex flex-row items-center justify-between pb-2 p-4 sm:p-6">
+              <CardTitle className="text-xs sm:text-sm font-medium text-muted-foreground">Total Revenue</CardTitle>
+              <DollarSign className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
             </CardHeader>
-            <CardContent>
-              <div className="text-3xl font-bold text-primary">₹{stats.totalRevenue.toLocaleString()}</div>
+            <CardContent className="p-4 sm:p-6 pt-0">
+              <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-primary">₹{stats.totalRevenue.toLocaleString()}</div>
               <p className="text-xs text-muted-foreground mt-1 flex items-center gap-1">
                 <TrendingUp className="h-3 w-3" />
                 All time earnings
@@ -279,85 +279,85 @@ const Admin = () => {
           </Card>
           
           <Card className="border-l-4 border-l-secondary hover:shadow-lg transition-shadow animate-slide-up" style={{ animationDelay: '0.1s' }}>
-            <CardHeader className="flex flex-row items-center justify-between pb-2">
-              <CardTitle className="text-sm font-medium text-muted-foreground">Monthly Revenue</CardTitle>
-              <Calendar className="h-5 w-5 text-secondary" />
+            <CardHeader className="flex flex-row items-center justify-between pb-2 p-4 sm:p-6">
+              <CardTitle className="text-xs sm:text-sm font-medium text-muted-foreground">Monthly Revenue</CardTitle>
+              <Calendar className="h-4 w-4 sm:h-5 sm:w-5 text-secondary" />
             </CardHeader>
-            <CardContent>
-              <div className="text-3xl font-bold text-secondary">₹{stats.monthlyRevenue.toLocaleString()}</div>
+            <CardContent className="p-4 sm:p-6 pt-0">
+              <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-secondary">₹{stats.monthlyRevenue.toLocaleString()}</div>
               <p className="text-xs text-muted-foreground mt-1">Last 30 days</p>
             </CardContent>
           </Card>
           
           <Card className="border-l-4 border-l-accent hover:shadow-lg transition-shadow animate-slide-up" style={{ animationDelay: '0.2s' }}>
-            <CardHeader className="flex flex-row items-center justify-between pb-2">
-              <CardTitle className="text-sm font-medium text-muted-foreground">Total Orders</CardTitle>
-              <ShoppingCart className="h-5 w-5 text-accent" />
+            <CardHeader className="flex flex-row items-center justify-between pb-2 p-4 sm:p-6">
+              <CardTitle className="text-xs sm:text-sm font-medium text-muted-foreground">Total Orders</CardTitle>
+              <ShoppingCart className="h-4 w-4 sm:h-5 sm:w-5 text-accent" />
             </CardHeader>
-            <CardContent>
-              <div className="text-3xl font-bold text-accent">{stats.totalOrders}</div>
+            <CardContent className="p-4 sm:p-6 pt-0">
+              <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-accent">{stats.totalOrders}</div>
               <p className="text-xs text-muted-foreground mt-1">Orders placed</p>
             </CardContent>
           </Card>
 
           <Card className="border-l-4 border-l-blue-600 hover:shadow-lg transition-shadow animate-slide-up" style={{ animationDelay: '0.3s' }}>
-            <CardHeader className="flex flex-row items-center justify-between pb-2">
-              <CardTitle className="text-sm font-medium text-muted-foreground">Product Variants</CardTitle>
-              <Package className="h-5 w-5 text-blue-600" />
+            <CardHeader className="flex flex-row items-center justify-between pb-2 p-4 sm:p-6">
+              <CardTitle className="text-xs sm:text-sm font-medium text-muted-foreground">Product Variants</CardTitle>
+              <Package className="h-4 w-4 sm:h-5 sm:w-5 text-blue-600" />
             </CardHeader>
-            <CardContent>
-              <div className="text-3xl font-bold text-blue-600">{stats.totalProducts}</div>
+            <CardContent className="p-4 sm:p-6 pt-0">
+              <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-blue-600">{stats.totalProducts}</div>
               <p className="text-xs text-muted-foreground mt-1">Mouth fresheners & more</p>
             </CardContent>
           </Card>
         </div>
 
         {/* Additional Stats Row */}
-        <div className="grid md:grid-cols-3 gap-6 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
           <Card className="hover:shadow-lg transition-shadow">
-            <CardHeader className="pb-2">
-              <CardTitle className="text-sm font-medium text-muted-foreground flex items-center gap-2">
-                <BarChart3 className="h-4 w-4" />
+            <CardHeader className="pb-2 p-4 sm:p-6">
+              <CardTitle className="text-xs sm:text-sm font-medium text-muted-foreground flex items-center gap-2">
+                <BarChart3 className="h-3 w-3 sm:h-4 sm:w-4" />
                 Average Order Value
               </CardTitle>
             </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold">₹{stats.averageOrderValue.toLocaleString()}</div>
+            <CardContent className="p-4 sm:p-6 pt-0">
+              <div className="text-lg sm:text-xl lg:text-2xl font-bold">₹{stats.averageOrderValue.toLocaleString()}</div>
             </CardContent>
           </Card>
 
           <Card className="hover:shadow-lg transition-shadow">
-            <CardHeader className="pb-2">
-              <CardTitle className="text-sm font-medium text-muted-foreground flex items-center gap-2">
-                <Star className="h-4 w-4" />
+            <CardHeader className="pb-2 p-4 sm:p-6">
+              <CardTitle className="text-xs sm:text-sm font-medium text-muted-foreground flex items-center gap-2">
+                <Star className="h-3 w-3 sm:h-4 sm:w-4" />
                 Top Category
               </CardTitle>
             </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold">{stats.topSellingCategory || "None"}</div>
+            <CardContent className="p-4 sm:p-6 pt-0">
+              <div className="text-lg sm:text-xl lg:text-2xl font-bold truncate">{stats.topSellingCategory || "None"}</div>
             </CardContent>
           </Card>
 
-          <Card className="hover:shadow-lg transition-shadow">
-            <CardHeader className="pb-2">
-              <CardTitle className="text-sm font-medium text-muted-foreground flex items-center gap-2">
-                <Users className="h-4 w-4" />
+          <Card className="hover:shadow-lg transition-shadow sm:col-span-2 lg:col-span-1">
+            <CardHeader className="pb-2 p-4 sm:p-6">
+              <CardTitle className="text-xs sm:text-sm font-medium text-muted-foreground flex items-center gap-2">
+                <Users className="h-3 w-3 sm:h-4 sm:w-4" />
                 Total Customers
               </CardTitle>
             </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold">{stats.totalCustomers}</div>
+            <CardContent className="p-4 sm:p-6 pt-0">
+              <div className="text-lg sm:text-xl lg:text-2xl font-bold">{stats.totalCustomers}</div>
             </CardContent>
           </Card>
         </div>
 
         {/* Tabs for different sections */}
-        <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
-          <TabsList className="grid w-full grid-cols-4">
-            <TabsTrigger value="overview">Overview</TabsTrigger>
-            <TabsTrigger value="products">Products</TabsTrigger>
-            <TabsTrigger value="orders">Orders</TabsTrigger>
-            <TabsTrigger value="analytics">Analytics</TabsTrigger>
+        <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-4 sm:space-y-6">
+          <TabsList className="grid w-full grid-cols-2 sm:grid-cols-4 h-auto">
+            <TabsTrigger value="overview" className="text-xs sm:text-sm py-2 px-3">Overview</TabsTrigger>
+            <TabsTrigger value="products" className="text-xs sm:text-sm py-2 px-3">Products</TabsTrigger>
+            <TabsTrigger value="orders" className="text-xs sm:text-sm py-2 px-3">Orders</TabsTrigger>
+            <TabsTrigger value="analytics" className="text-xs sm:text-sm py-2 px-3">Analytics</TabsTrigger>
           </TabsList>
 
           <TabsContent value="overview" className="space-y-6">
@@ -442,18 +442,18 @@ const Admin = () => {
               </CardHeader>
               <CardContent>
                 {/* Search and Filter */}
-                <div className="flex flex-col sm:flex-row gap-4 mb-6">
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-4 sm:mb-6">
                   <div className="relative flex-1">
                     <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                     <Input
                       placeholder="Search products..."
                       value={searchTerm}
                       onChange={(e) => setSearchTerm(e.target.value)}
-                      className="pl-10"
+                      className="pl-10 text-sm"
                     />
                   </div>
                   <Select value={selectedCategory} onValueChange={setSelectedCategory}>
-                    <SelectTrigger className="w-full sm:w-48">
+                    <SelectTrigger className="w-full sm:w-40 lg:w-48 text-sm">
                       <SelectValue placeholder="Filter by category" />
                     </SelectTrigger>
                     <SelectContent>
@@ -464,7 +464,7 @@ const Admin = () => {
                     </SelectContent>
                   </Select>
                   <Select value={sortBy} onValueChange={setSortBy}>
-                    <SelectTrigger className="w-full sm:w-48">
+                    <SelectTrigger className="w-full sm:w-32 lg:w-40 text-sm">
                       <SelectValue placeholder="Sort by" />
                     </SelectTrigger>
                     <SelectContent>
@@ -476,28 +476,28 @@ const Admin = () => {
                 </div>
 
                 {/* Products Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
                   {filteredProducts.map((product) => (
                     <Card key={product.id} className="hover:shadow-lg transition-shadow">
-                      <CardContent className="p-4">
-                        <div className="flex items-start justify-between mb-3">
+                      <CardContent className="p-3 sm:p-4">
+                        <div className="flex items-start justify-between mb-2 sm:mb-3">
                           <img
                             src={product.image}
                             alt={product.name}
-                            className="w-16 h-16 object-contain bg-white rounded p-2"
+                            className="w-12 h-12 sm:w-16 sm:h-16 object-contain bg-white rounded p-1 sm:p-2"
                           />
                           <div className="flex gap-1">
-                            <Button variant="outline" size="sm" onClick={() => openProductDialog(product)}>
+                            <Button variant="outline" size="sm" onClick={() => openProductDialog(product)} className="h-7 w-7 sm:h-8 sm:w-8 p-0">
                               <Edit className="h-3 w-3" />
                             </Button>
-                            <Button variant="outline" size="sm">
+                            <Button variant="outline" size="sm" className="h-7 w-7 sm:h-8 sm:w-8 p-0">
                               <Trash2 className="h-3 w-3" />
                             </Button>
                           </div>
                         </div>
-                        <h3 className="font-semibold text-sm mb-1">{product.name}</h3>
-                        <p className="text-xs text-muted-foreground mb-2">{product.category}</p>
-                        <p className="text-lg font-bold text-primary">₹{product.price}</p>
+                        <h3 className="font-semibold text-xs sm:text-sm mb-1 line-clamp-2">{product.name}</h3>
+                        <p className="text-xs text-muted-foreground mb-1 sm:mb-2 truncate">{product.category}</p>
+                        <p className="text-sm sm:text-lg font-bold text-primary">₹{product.price}</p>
                         <p className="text-xs text-muted-foreground">{product.weight}</p>
                       </CardContent>
                     </Card>
