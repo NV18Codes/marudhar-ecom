@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { toast } from "sonner";
+import { ArrowLeft } from "lucide-react";
 
 const SignUp = () => {
   const [name, setName] = useState("");
@@ -44,14 +45,31 @@ const SignUp = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background to-muted p-4">
-      <Card className="w-full max-w-md">
-        <CardHeader className="space-y-1">
-          <CardTitle className="text-3xl font-heading text-center">
-            <span className="text-secondary">marudhar</span>
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary/5 via-background to-secondary/5 p-4 relative">
+      {/* Back to Home Button */}
+      <Button
+        variant="ghost"
+        className="absolute top-6 left-6 flex items-center gap-2 hover:gap-3 transition-all"
+        onClick={() => navigate("/")}
+      >
+        <ArrowLeft className="h-4 w-4" />
+        Back to Home
+      </Button>
+
+      <Card className="w-full max-w-md shadow-2xl animate-fade-in">
+        <CardHeader className="space-y-3 text-center">
+          <div className="flex justify-center mb-2">
+            <img 
+              src="/logo.png" 
+              alt="Marudhar" 
+              className="h-16 w-auto object-contain"
+            />
+          </div>
+          <CardTitle className="text-3xl font-heading">
+            <span className="text-blue-600">Join Marudhar</span>
           </CardTitle>
-          <CardDescription className="text-center">
-            Create your account
+          <CardDescription className="text-base">
+            Create your account to start shopping
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -98,14 +116,14 @@ const SignUp = () => {
                 required
               />
             </div>
-            <Button type="submit" className="w-full" disabled={loading}>
+            <Button type="submit" className="w-full btn-hero" size="lg" disabled={loading}>
               {loading ? "Creating account..." : "Sign Up"}
             </Button>
           </form>
           
-          <div className="mt-4 text-center text-sm">
+          <div className="mt-6 text-center text-sm">
             Already have an account?{" "}
-            <Link to="/signin" className="text-primary hover:underline">
+            <Link to="/signin" className="text-primary hover:underline font-semibold">
               Sign in
             </Link>
           </div>

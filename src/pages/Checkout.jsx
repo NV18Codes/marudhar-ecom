@@ -9,6 +9,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { toast } from "sonner";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { ArrowLeft, CreditCard } from "lucide-react";
 
 const Checkout = () => {
   const { cart, getCartTotal, clearCart } = useCart();
@@ -56,7 +57,32 @@ const Checkout = () => {
       description: "Order Payment",
       image: "/favicon.ico",
       handler: function (response) {
-        toast.success("Payment Successful! Order ID: " + response.razorpay_payment_id);
+        // Create order object
+        const order = {
+          id: Date.now().toString() + Math.random().toString(36).substr(2, 9),
+          customerName: formData.name,
+          customerEmail: formData.email,
+          customerPhone: formData.phone,
+          address: `${formData.address}, ${formData.city}, ${formData.pincode}`,
+          items: cart.map(item => ({
+            id: item.id,
+            name: item.name,
+            price: item.price,
+            quantity: item.quantity,
+            image: item.image
+          })),
+          total: getCartTotal(),
+          status: "Pending",
+          paymentId: response.razorpay_payment_id,
+          createdAt: new Date().toISOString()
+        };
+
+        // Save order to localStorage
+        const existingOrders = JSON.parse(localStorage.getItem("marudhar_orders") || "[]");
+        existingOrders.push(order);
+        localStorage.setItem("marudhar_orders", JSON.stringify(existingOrders));
+
+        toast.success("Order placed successfully! Order ID: #" + order.id.slice(0, 8));
         clearCart();
         navigate("/");
       },
@@ -85,15 +111,28 @@ const Checkout = () => {
   }
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-gradient-to-b from-background to-muted/20">
       <Header />
       <main className="flex-1 container mx-auto px-4 py-8">
-        <h1 className="text-3xl font-heading font-bold mb-8">Checkout</h1>
+        {/* Back Button */}
+        <Button
+          variant="ghost"
+          className="mb-4 flex items-center gap-2 hover:gap-3 transition-all"
+          onClick={() => navigate("/cart")}
+        >
+          <ArrowLeft className="h-4 w-4" />
+          Back to Cart
+        </Button>
+
+        <div className="mb-8 animate-fade-in">
+          <h1 className="text-4xl font-heading font-bold mb-2 text-gradient">Checkout</h1>
+          <p className="text-muted-foreground">Complete your order and choose payment method</p>
+        </div>
         
         <div className="grid lg:grid-cols-2 gap-8">
-          <Card>
-            <CardHeader>
-              <CardTitle>Shipping Information</CardTitle>
+          <Card className="shadow-lg animate-slide-up">
+            <CardHeader className="bg-gradient-to-r from-primary/5 to-transparent">
+              <CardTitle className="text-2xl font-heading">Shipping Information</CardTitle>
             </CardHeader>
             <CardContent>
               <form onSubmit={handlePayment} className="space-y-4">
@@ -161,56 +200,57 @@ const Checkout = () => {
                     />
                   </div>
                 </div>
-                <Button type="submit" className="w-full" size="lg">
+                <Button type="submit" className="w-full btn-hero" size="lg">
+                  <CreditCard className="mr-2 h-5 w-5" />
                   Proceed to Payment
                 </Button>
               </form>
             </CardContent>
           </Card>
 
-          <div>
-            <Card>
-              <CardHeader>
-                <CardTitle>Order Summary</CardTitle>
+          <div className="animate-slide-up" style={{ animationDelay: '0.1s' }}>
+            <Card className="shadow-lg sticky top-24">
+              <CardHeader className="bg-gradient-to-r from-secondary/5 to-transparent">
+                <CardTitle className="text-2xl font-heading">Order Summary</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 {cart.map((item) => (
-                  <div key={item.id} className="flex justify-between">
-                    <div className="flex gap-3">
+                  <div key={item.id} className="flex justify-between items-center p-3 rounded-lg hover:bg-muted/30 transition-colors">
+                    <div className="flex gap-3 items-center">
                       <img
                         src={item.image}
                         alt={item.name}
-                        className="w-16 h-16 object-cover rounded"
+                        className="w-16 h-16 object-contain bg-white rounded p-1"
                       />
                       <div>
                         <p className="font-semibold">{item.name}</p>
-                        <p className="text-sm text-muted-foreground">Qty: {item.quantity}</p>
+                        <p className="text-sm text-muted-foreground">Qty: {item.quantity} × ₹{item.price}</p>
                       </div>
                     </div>
-                    <p className="font-semibold">₹{item.price * item.quantity}</p>
+                    <p className="font-bold text-primary">₹{(item.price * item.quantity).toLocaleString()}</p>
                   </div>
                 ))}
                 
-                <div className="border-t pt-4 space-y-2">
-                  <div className="flex justify-between">
+                <div className="border-t pt-4 space-y-3">
+                  <div className="flex justify-between text-base">
                     <span className="text-muted-foreground">Subtotal</span>
-                    <span className="font-semibold">₹{getCartTotal()}</span>
+                    <span className="font-semibold">₹{getCartTotal().toLocaleString()}</span>
                   </div>
-                  <div className="flex justify-between">
+                  <div className="flex justify-between text-base">
                     <span className="text-muted-foreground">Shipping</span>
-                    <span className="font-semibold">Free</span>
+                    <span className="font-semibold text-green-600">Free</span>
                   </div>
-                  <div className="border-t pt-2 flex justify-between text-lg">
-                    <span className="font-bold">Total</span>
-                    <span className="font-bold text-primary">₹{getCartTotal()}</span>
+                  <div className="border-t pt-3 flex justify-between">
+                    <span className="text-xl font-bold">Total</span>
+                    <span className="text-2xl font-bold text-primary">₹{getCartTotal().toLocaleString()}</span>
                   </div>
                 </div>
               </CardContent>
             </Card>
             
-            <div className="mt-4 p-4 bg-muted rounded-lg text-sm">
-              <p className="font-semibold mb-2">Demo Payment Mode:</p>
-              <p>This is using Razorpay test mode. No real payment will be processed.</p>
+            <div className="mt-4 p-4 bg-gradient-to-r from-blue-50 to-green-50 border border-blue-200 rounded-lg text-sm">
+              <p className="font-semibold mb-2 text-blue-900">🔒 Secure Payment</p>
+              <p className="text-blue-800">This is using Razorpay test mode. No real payment will be processed.</p>
             </div>
           </div>
         </div>
