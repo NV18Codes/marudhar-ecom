@@ -35,7 +35,7 @@ const Hero = () => {
             <Button
               size="lg"
               className="btn-hero text-lg px-10 py-6 shadow-2xl"
-              onClick={() => window.location.href = '/products'}
+              onClick={() => window.location.href = '/shop'}
             >
               Shop Now
               <ArrowRight className="ml-2 h-5 w-5" />
