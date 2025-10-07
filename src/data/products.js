@@ -1,4 +1,4 @@
-// All product images are now in public/products/ folders
+// All product images are now in public/images/ folders
 // No imports needed - we reference them directly via public URLs
 
 export const products = [
@@ -10,7 +10,7 @@ export const products = [
     description: "A tangy-sweet mix of dried mango pulp blended with spices and herbs; perfect as a flavorful appetizer.",
     price: 199,
     weight: "195g",
-    image: "/products/Khata meetha/Aampak (Khatta Meetha).png"
+    image: "/images/Khata meetha/Aampak (Khatta Meetha).png"
   },
   {
     id: "km-2",
@@ -19,7 +19,7 @@ export const products = [
     description: "Sweet and tangy digestive made from pomegranate seeds and spices; aids digestion and boosts gut health.",
     price: 179,
     weight: "180g",
-    image: "/products/Khata meetha/Anardana Goli (Khatta Meetha).png"
+    image: "/images/Khata meetha/Anardana Goli (Khatta Meetha).png"
   },
   {
     id: "km-3",
@@ -28,7 +28,7 @@ export const products = [
     description: "A delicious balance of tangy amla and sugar, rich in Vitamin C, boosts immunity, and aids digestion.",
     price: 189,
     weight: "175g",
-    image: "/products/Khata meetha/Chatpat Amla (Khatta Meetha).png"
+    image: "/images/Khata meetha/Chatpat Amla (Khatta Meetha).png"
   },
   {
     id: "km-4",
@@ -37,7 +37,7 @@ export const products = [
     description: "Spicy and tangy treat made from Indian gooseberry and spices; packed with antioxidants and minerals.",
     price: 189,
     weight: "175g",
-    image: "/products/Khata meetha/Teekha Amla.png"
+    image: "/images/Khata meetha/Teekha Amla.png"
   },
   {
     id: "km-5",
@@ -46,7 +46,7 @@ export const products = [
     description: "Sweet and tangy mango pulp candy with aromatic spices; a refreshing twist to traditional flavors.",
     price: 179,
     weight: "170g",
-    image: "/products/Khata meetha/Aam Goli (Khatta Mitha).png"
+    image: "/images/Khata meetha/Aam Goli (Khatta Mitha).png"
   },
   {
     id: "km-6",
@@ -55,7 +55,7 @@ export const products = [
     description: "Tangy digestive ball with cumin and mango powder; supports digestion and metabolism.",
     price: 159,
     weight: "160g",
-    image: "/products/Khata meetha/Jeera Goli (Khatta Meetha).png"
+    image: "/images/Khata meetha/Jeera Goli (Khatta Meetha).png"
   },
   {
     id: "km-7",
@@ -64,7 +64,7 @@ export const products = [
     description: "Sweet-tangy tamarind treat rich in antioxidants; aids digestion and balances acidity.",
     price: 189,
     weight: "160g",
-    image: "/products/Khata meetha/Imli Laddu (Khatta Meetha).png"
+    image: "/images/Khata meetha/Imli Laddu (Khatta Meetha).png"
   },
   {
     id: "km-8",
@@ -73,7 +73,7 @@ export const products = [
     description: "Bold, tangy tamarind candy with dry mango and neem; an irresistible chatpata delight.",
     price: 159,
     weight: "155g",
-    image: "/products/Khata meetha/Manchali Imli (Khatta Meetha).png"
+    image: "/images/Khata meetha/Manchali Imli (Khatta Meetha).png"
   },
 
   // ========== MOUTH FRESHENER RANGE ==========
@@ -84,7 +84,7 @@ export const products = [
     description: "Premium mix of coriander seeds, fennel, areca nut & menthol; sweet and minty freshness.",
     price: 199,
     weight: "200g",
-    image: "/products/Khata meetha/Dilbhar Mix (Mouth Freshener).png"
+    image: "/images/Khata meetha/Dilbhar Mix (Mouth Freshener).png"
   },
   {
     id: "mf-2",
@@ -93,7 +93,7 @@ export const products = [
     description: "Aromatic and refreshing mouth freshener with betel leaf essence and cardamom.",
     price: 199,
     weight: "200g",
-    image: "/products/MouthFreshner/Mitha Pan (Mouth Freshener).png"
+    image: "/images/MouthFreshner/Mitha Pan (Mouth Freshener).png"
   },
   {
     id: "mf-3",
@@ -102,7 +102,7 @@ export const products = [
     description: "Supari-based rose-flavored freshener with sweet, floral notes.",
     price: 179,
     weight: "190g",
-    image: "/products/MouthFreshner/Gulab Mix (Mouth Freshener).png"
+    image: "/images/MouthFreshner/Gulab Mix (Mouth Freshener).png"
   },
   {
     id: "mf-4",
@@ -111,7 +111,7 @@ export const products = [
     description: "Spicy-sweet dry date mix; rich in vitamins, calcium, and iron.",
     price: 189,
     weight: "185g",
-    image: "/products/MouthFreshner/Jet Chuhara (Mouth Freshener).png"
+    image: "/images/MouthFreshner/Jet Chuhara (Mouth Freshener).png"
   },
   {
     id: "mf-5",
@@ -120,7 +120,7 @@ export const products = [
     description: "Crunchy, sweet fennel coated with sugar and cardamom for post-meal freshness.",
     price: 159,
     weight: "180g",
-    image: "/products/MouthFreshner/Madrasi Sonff (Mouth Freshener).png"
+    image: "/images/MouthFreshner/Madrasi Sonff (Mouth Freshener).png"
   },
   {
     id: "mf-6",
@@ -129,7 +129,7 @@ export const products = [
     description: "Colorful blend of betel nut, menthol, and dry papaya (tooty fruity); rich and aromatic.",
     price: 199,
     weight: "195g",
-    image: "/products/MouthFreshner/Jhilmil Supari (Mouth Freshener).png"
+    image: "/images/MouthFreshner/Jhilmil Supari (Mouth Freshener).png"
   },
   {
     id: "mf-7",
@@ -138,7 +138,7 @@ export const products = [
     description: "Sweet rose-flavored supari offering a refreshing after-meal indulgence.",
     price: 189,
     weight: "190g",
-    image: "/products/MouthFreshner/Milky Gulab Supari (Mouth Freshener).png"
+    image: "/images/MouthFreshner/Milky Gulab Supari (Mouth Freshener).png"
   },
   {
     id: "mf-8",
@@ -147,7 +147,7 @@ export const products = [
     description: "A rich blend of fennel, cardamom, silver leaves, and saffron; aids digestion and refreshes.",
     price: 179,
     weight: "185g",
-    image: "/products/MouthFreshner/Navratan Mix (Mouth Freshener).png"
+    image: "/images/MouthFreshner/Navratan Mix (Mouth Freshener).png"
   },
   {
     id: "mf-9",
@@ -156,7 +156,7 @@ export const products = [
     description: "Sugar-coated aniseed freshener with a crunchy, aromatic taste.",
     price: 159,
     weight: "175g",
-    image: "/products/MouthFreshner/Mitha Sonff (Mouth Freshener).png"
+    image: "/images/MouthFreshner/Mitha Sonff (Mouth Freshener).png"
   },
   {
     id: "mf-10",
@@ -165,7 +165,7 @@ export const products = [
     description: "Fennel, menthol, and rose-flavored blend; sweet and cooling freshness.",
     price: 189,
     weight: "190g",
-    image: "/products/MouthFreshner/Punjabi Mix (Mouth Freshener).png"
+    image: "/images/MouthFreshner/Punjabi Mix (Mouth Freshener).png"
   },
   {
     id: "mf-11",
@@ -174,7 +174,7 @@ export const products = [
     description: "Traditional pan masala mix with betel nut, aniseed, and tutti-frutti; refreshing after meals.",
     price: 199,
     weight: "195g",
-    image: "/products/MouthFreshner/Pan Mix (Mouth Freshener).png"
+    image: "/images/MouthFreshner/Pan Mix (Mouth Freshener).png"
   },
   {
     id: "mf-12",
@@ -183,7 +183,7 @@ export const products = [
     description: "Colorful blend of sugar-coated aniseed and rose essence; a sweet post-meal treat.",
     price: 179,
     weight: "180g",
-    image: "/products/MouthFreshner/Satrangee Mix (Mouth Freshener).png"
+    image: "/images/MouthFreshner/Satrangee Mix (Mouth Freshener).png"
   },
   {
     id: "mf-13",
@@ -192,7 +192,7 @@ export const products = [
     description: "Premium silver-leafed mix with dry dates and sugar-coated fennel; elegant freshness.",
     price: 199,
     weight: "195g",
-    image: "/products/MouthFreshner/Shai Mix (Mouth Freshener).png"
+    image: "/images/MouthFreshner/Shai Mix (Mouth Freshener).png"
   },
   {
     id: "mf-14",
@@ -201,7 +201,7 @@ export const products = [
     description: "Rose-flavored aniseed candy with menthol; prevents gas and bad breath.",
     price: 179,
     weight: "180g",
-    image: "/products/MouthFreshner/Rasbhari Sonff (Mouth Freshener).png"
+    image: "/images/MouthFreshner/Rasbhari Sonff (Mouth Freshener).png"
   },
 
   // ========== MUKHWAS RANGE ==========
@@ -212,7 +212,7 @@ export const products = [
     description: "Fennel, sesame, coriander, and menthol mix for natural post-meal freshness.",
     price: 189,
     weight: "200g",
-    image: "/products/Mukhwas/Royal Kitty (Mukhwas).png"
+    image: "/images/Mukhwas/Royal Kitty (Mukhwas).png"
   },
   {
     id: "mw-2",
@@ -221,7 +221,7 @@ export const products = [
     description: "Sugar-coated fennel and dry fruit mix with rose petals; royal aromatic taste.",
     price: 199,
     weight: "200g",
-    image: "/products/Mukhwas/Royal Rajwadi (Mukhwas).png"
+    image: "/images/Mukhwas/Royal Rajwadi (Mukhwas).png"
   },
   {
     id: "mw-3",
@@ -230,7 +230,7 @@ export const products = [
     description: "Roasted fennel and sesame seeds for a rich, healthy digestive experience.",
     price: 189,
     weight: "195g",
-    image: "/products/Mukhwas/Royal Roasted (Mukhwas).png"
+    image: "/images/Mukhwas/Royal Roasted (Mukhwas).png"
   },
   {
     id: "mw-4",
@@ -239,7 +239,7 @@ export const products = [
     description: "Fennel and dry date mix with menthol and watermelon seeds; flavorful crunch.",
     price: 199,
     weight: "200g",
-    image: "/products/Mukhwas/Royal Kashmiri (Mukhwas).png"
+    image: "/images/Mukhwas/Royal Kashmiri (Mukhwas).png"
   },
 
   // ========== REFRESHING CANDY RANGE ==========
@@ -250,7 +250,7 @@ export const products = [
     description: "Sweet, refreshing candy infused with traditional pan flavor.",
     price: 99,
     weight: "150g",
-    image: "/products/Candy/Pan Candy.png"
+    image: "/images/Candy/Pan Candy.png"
   },
   {
     id: "rc-2",
@@ -259,7 +259,7 @@ export const products = [
     description: "Tangy-spicy candy with cumin, black salt, and mango for a zesty punch.",
     price: 99,
     weight: "145g",
-    image: "/products/Candy/Chatpat Fatka Candy.png"
+    image: "/images/Candy/Chatpat Fatka Candy.png"
   },
   {
     id: "rc-3",
@@ -268,7 +268,7 @@ export const products = [
     description: "Menthol-based cooling candy with balanced sweetness.",
     price: 89,
     weight: "140g",
-    image: "/products/Candy/Mini Candy.png"
+    image: "/images/Candy/Mini Candy.png"
   },
   {
     id: "rc-4",
@@ -277,7 +277,7 @@ export const products = [
     description: "Sweet and spicy black pepper candy for bold flavor lovers.",
     price: 99,
     weight: "145g",
-    image: "/products/Candy/Kali Mirch Candy.png"
+    image: "/images/Candy/Kali Mirch Candy.png"
   },
   {
     id: "rc-5",
@@ -286,7 +286,7 @@ export const products = [
     description: "Tangy-sweet citrus candy made with real orange essence.",
     price: 89,
     weight: "140g",
-    image: "/products/Candy/Orange Candy.png"
+    image: "/images/Candy/Orange Candy.png"
   },
 
   // ========== SPECIAL PAN RANGE ==========
@@ -297,7 +297,7 @@ export const products = [
     description: "Rich blend of gulkand, betel leaves, menthol, and dry fruits; aromatic and cooling.",
     price: 249,
     weight: "220g",
-    image: "/products/pan/Jaipuri Pan Supari.png"
+    image: "/images/pan/Jaipuri Pan Supari.png"
   },
   {
     id: "sp-2",
@@ -306,7 +306,7 @@ export const products = [
     description: "Sweet, aromatic mix recreating the authentic pan experience; made with gulkand and betel leaves.",
     price: 249,
     weight: "220g",
-    image: "/products/pan/Calcutta Pan.png"
+    image: "/images/pan/Calcutta Pan.png"
   },
   {
     id: "sp-3",
@@ -315,7 +315,7 @@ export const products = [
     description: "Traditional Banarasi-style pan with kewara flavor and refreshing menthol.",
     price: 249,
     weight: "220g",
-    image: "/products/pan/Banarasi Pan.png"
+    image: "/images/pan/Banarasi Pan.png"
   },
   {
     id: "sp-4",
@@ -324,7 +324,7 @@ export const products = [
     description: "Sweet gulkand and betel leaf blend offering cooling and digestive benefits.",
     price: 229,
     weight: "215g",
-    image: "/products/pan/Gulkand Mix.png"
+    image: "/images/pan/Gulkand Mix.png"
   }
 ];
 

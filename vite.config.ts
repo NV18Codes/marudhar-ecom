@@ -22,5 +22,7 @@ export default defineConfig(({ mode }) => ({
         main: "./index.html"
       }
     }
-  }
+  },
+  publicDir: "public",
+  copyPublicDir: true
 }));
