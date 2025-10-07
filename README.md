@@ -1,73 +1,81 @@
-# Welcome to your Lovable project
+# Marudhar - Premium Indian Sweets & Mouth Fresheners
 
-## Project info
+A modern e-commerce web application for traditional Indian sweets, mouth fresheners, and delicacies.
 
-**URL**: https://lovable.dev/projects/e03cdd32-62cb-4504-9112-1fdaa2f7e75d
+## Features
 
-## How can I edit this code?
+- 🛍️ **Product Catalog** - Browse through 35+ premium products across 5 categories
+- 🛒 **Shopping Cart** - Add products to cart with quantity management
+- 💳 **Checkout** - Secure payment processing with Razorpay integration
+- 👤 **User Authentication** - Sign up and sign in functionality
+- 🔐 **Admin Dashboard** - Role-based admin access for order management
+- 📱 **Responsive Design** - Mobile-first approach with beautiful UI
+- 🎨 **Modern UI** - Built with React, Tailwind CSS, and Shadcn UI
 
-There are several ways of editing your application.
+## Product Categories
 
-**Use Lovable**
+- **Khatta Meetha Range** - Tangy-sweet treats like Aampak, Anardana Goli
+- **Mouth Freshener Range** - Fresh breath solutions like Dilbhar Mix, Mitha Pan
+- **Mukhwas Range** - Traditional digestive aids like Royal Kitty, Royal Rajwadi
+- **Refreshing Candy Range** - Sweet treats like Pan Candy, Chatpat Fatka Candy
+- **Special Pan Range** - Premium pan products like Jaipuri Pan Supari
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/e03cdd32-62cb-4504-9112-1fdaa2f7e75d) and start prompting.
+## Tech Stack
 
-Changes made via Lovable will be committed automatically to this repo.
+- **Frontend**: React 18, JavaScript
+- **Styling**: Tailwind CSS, Shadcn UI
+- **Routing**: React Router DOM
+- **State Management**: React Context API
+- **Payment**: Razorpay Integration
+- **Build Tool**: Vite
+- **Deployment**: Vercel
 
-**Use your preferred IDE**
+## Getting Started
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Prerequisites
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- Node.js 18+ 
+- npm or yarn
 
-Follow these steps:
+### Installation
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+```bash
+# Clone the repository
+git clone <repository-url>
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Navigate to project directory
+cd marudhar-flavor-quest
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+### Demo Credentials
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+**Admin Access:**
+- Email: admin@marudhar.com
+- Password: admin123
 
-**Use GitHub Codespaces**
+**Customer Access:**
+- Email: customer@test.com
+- Password: customer123
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Deployment
 
-## What technologies are used for this project?
+The application is deployed on Vercel with automatic deployments from the main branch.
 
-This project is built with:
+**Live URL**: https://marudhar-ecom.vercel.app/
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Contributing
 
-## How can I deploy this project?
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
 
-Simply open [Lovable](https://lovable.dev/projects/e03cdd32-62cb-4504-9112-1fdaa2f7e75d) and click on Share -> Publish.
+## License
 
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+This project is proprietary and confidential.
