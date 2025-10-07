@@ -41,7 +41,7 @@ const Header = () => {
               Home
             </button>
             <button 
-              onClick={() => navigate("/product-page")} 
+              onClick={() => navigate("/products")} 
               className="text-sm font-medium text-foreground hover:text-primary transition-colors"
             >
               Products
@@ -118,7 +118,7 @@ const Header = () => {
             </button>
             <button
               onClick={() => {
-                navigate("/product-page");
+                navigate("/products");
                 setIsMenuOpen(false);
               }}
               className="block text-sm font-medium text-foreground hover:text-primary transition-colors"
