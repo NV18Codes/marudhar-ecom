@@ -100,6 +100,17 @@ const SignIn = () => {
               <p><span className="font-medium">Admin:</span> admin@marudhar.com / admin123</p>
               <p><span className="font-medium">Customer:</span> customer@test.com / customer123</p>
             </div>
+            <Button 
+              variant="outline" 
+              size="sm" 
+              className="w-full mt-3"
+              onClick={() => {
+                localStorage.clear();
+                window.location.reload();
+              }}
+            >
+              Reset Demo Data
+            </Button>
           </div>
         </CardContent>
       </Card>

@@ -58,9 +58,13 @@ export const AuthProvider = ({ children }) => {
   const signIn = async (email, password) => {
     try {
       const users = JSON.parse(localStorage.getItem("marudhar_users") || "[]");
+      console.log("Available users:", users);
+      console.log("Attempting login with:", { email, password });
+      
       const user = users.find(u => u.email === email && u.password === password);
       
       if (!user) {
+        console.log("User not found or password incorrect");
         throw new Error("Invalid email or password");
       }
 
@@ -72,11 +76,13 @@ export const AuthProvider = ({ children }) => {
         createdAt: user.createdAt
       };
 
+      console.log("Login successful:", userWithoutPassword);
       localStorage.setItem("marudhar_user", JSON.stringify(userWithoutPassword));
       setUser(userWithoutPassword);
       
       return { success: true };
     } catch (error) {
+      console.log("Login error:", error.message);
       return { success: false, error: error.message };
     }
   };

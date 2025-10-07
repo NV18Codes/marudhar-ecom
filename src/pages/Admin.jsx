@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useAuth } from "@/contexts/AuthContext";
 import { Navigate } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
@@ -18,7 +19,7 @@ import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 
 const Admin = () => {
-  const [adminUser, setAdminUser] = useState(null);
+  const { user, isAdmin, signOut } = useAuth();
   const [stats, setStats] = useState({
     totalRevenue: 0,
     totalOrders: 0,
@@ -30,11 +31,6 @@ const Admin = () => {
   const [isOrderDialogOpen, setIsOrderDialogOpen] = useState(false);
 
   useEffect(() => {
-    // Check admin authentication
-    const storedAdmin = localStorage.getItem("marudhar_admin");
-    if (storedAdmin) {
-      setAdminUser(JSON.parse(storedAdmin));
-    }
     loadDashboardData();
   }, []);
 
@@ -75,14 +71,16 @@ const Admin = () => {
   };
 
   const handleLogout = () => {
-    localStorage.removeItem("marudhar_admin");
-    localStorage.removeItem("marudhar_user");
+    signOut();
     toast.success("Logged out successfully");
-    window.location.href = "/admin/login";
   };
 
-  if (!adminUser) {
-    return <Navigate to="/admin/login" />;
+  if (!user) {
+    return <Navigate to="/signin" />;
+  }
+
+  if (!isAdmin) {
+    return <Navigate to="/" />;
   }
 
   const getStatusColor = (status) => {
@@ -109,7 +107,7 @@ const Admin = () => {
             />
             <div>
               <h1 className="text-2xl font-heading font-bold text-blue-600">Admin Dashboard</h1>
-              <p className="text-sm text-muted-foreground">Welcome back, {adminUser.name}</p>
+              <p className="text-sm text-muted-foreground">Welcome back, {user.name}</p>
             </div>
           </div>
           <Button

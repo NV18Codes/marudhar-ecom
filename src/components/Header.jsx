@@ -17,7 +17,10 @@ const Header = () => {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
-            <a href="/" className="flex items-center gap-3">
+            <button 
+              onClick={() => navigate("/")} 
+              className="flex items-center gap-3"
+            >
               <img 
                 src="/logo.png" 
                 alt="Marudhar" 
@@ -26,17 +29,23 @@ const Header = () => {
               <span className="text-2xl font-heading font-bold text-blue-600">
                 Marudhar
               </span>
-            </a>
+            </button>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="/" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+            <button 
+              onClick={() => navigate("/")} 
+              className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+            >
               Home
-            </a>
-            <a href="/products" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+            </button>
+            <button 
+              onClick={() => navigate("/products")} 
+              className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+            >
               Products
-            </a>
+            </button>
             <a href="/#about" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
               About
             </a>
@@ -44,9 +53,12 @@ const Header = () => {
               Contact
             </a>
             {isAdmin && (
-              <a href="/admin" className="text-sm font-medium text-accent hover:text-primary transition-colors">
+              <button 
+                onClick={() => navigate("/admin")} 
+                className="text-sm font-medium text-accent hover:text-primary transition-colors"
+              >
                 Admin
-              </a>
+              </button>
             )}
           </nav>
 
@@ -95,20 +107,24 @@ const Header = () => {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <nav className="md:hidden py-4 space-y-4 border-t border-border animate-fade-in">
-            <a
-              href="/"
+            <button
+              onClick={() => {
+                navigate("/");
+                setIsMenuOpen(false);
+              }}
               className="block text-sm font-medium text-foreground hover:text-primary transition-colors"
-              onClick={() => setIsMenuOpen(false)}
             >
               Home
-            </a>
-            <a
-              href="/products"
+            </button>
+            <button
+              onClick={() => {
+                navigate("/products");
+                setIsMenuOpen(false);
+              }}
               className="block text-sm font-medium text-foreground hover:text-primary transition-colors"
-              onClick={() => setIsMenuOpen(false)}
             >
               Products
-            </a>
+            </button>
             <a
               href="/#about"
               className="block text-sm font-medium text-foreground hover:text-primary transition-colors"
@@ -124,13 +140,15 @@ const Header = () => {
               Contact
             </a>
             {isAdmin && (
-              <a
-                href="/admin"
+              <button
+                onClick={() => {
+                  navigate("/admin");
+                  setIsMenuOpen(false);
+                }}
                 className="block text-sm font-medium text-accent hover:text-primary transition-colors"
-                onClick={() => setIsMenuOpen(false)}
               >
                 Admin
-              </a>
+              </button>
             )}
             {user ? (
               <Button variant="outline" className="w-full" onClick={signOut}>
