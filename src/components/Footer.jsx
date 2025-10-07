@@ -1,6 +1,9 @@
 import { Phone, MapPin, Mail } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
+  const navigate = useNavigate();
+
   return (
     <footer className="bg-gradient-to-b from-card to-muted/20 border-t border-border mt-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -54,19 +57,28 @@ const Footer = () => {
             <h4 className="text-lg font-heading font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-3">
               <li>
-                <a href="/products" className="text-sm text-muted-foreground hover:text-primary transition-all hover:translate-x-1 inline-block">
+                <button 
+                  onClick={() => navigate("/products")} 
+                  className="text-sm text-muted-foreground hover:text-primary transition-all hover:translate-x-1 inline-block text-left"
+                >
                   → Our Products
-                </a>
+                </button>
               </li>
               <li>
-                <a href="/#about" className="text-sm text-muted-foreground hover:text-primary transition-all hover:translate-x-1 inline-block">
+                <button 
+                  onClick={() => navigate("/#about")} 
+                  className="text-sm text-muted-foreground hover:text-primary transition-all hover:translate-x-1 inline-block text-left"
+                >
                   → About Us
-                </a>
+                </button>
               </li>
               <li>
-                <a href="/#contact" className="text-sm text-muted-foreground hover:text-primary transition-all hover:translate-x-1 inline-block">
+                <button 
+                  onClick={() => navigate("/#contact")} 
+                  className="text-sm text-muted-foreground hover:text-primary transition-all hover:translate-x-1 inline-block text-left"
+                >
                   → Contact
-                </a>
+                </button>
               </li>
             </ul>
           </div>
